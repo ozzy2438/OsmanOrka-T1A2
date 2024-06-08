@@ -77,9 +77,9 @@ This file contains styles to ensure the website is responsive and displays corre
 
 For any questions or further information, please contact:
 
-- **Email**: john.doe@example.com
-- **Phone**: (123) 456-7890
-- **Location**: City, Country
+- **Email**: 15340@coderacademy.edu.au
+- **Phone**: 0413 409 201
+- **Location**: Melbourne, Australia
 
 ## License
 
