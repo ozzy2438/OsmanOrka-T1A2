@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Projects</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://use.typekit.net/xyz123.css"> <!-- Adobe Fonts link -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/colors/3.0.0/js/colors.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchInput = document.getElementById('search');
+            const projectPosts = document.querySelectorAll('#projects ul li');
+            searchInput.addEventListener('input', function() {
+                const filter = searchInput.value.toLowerCase();
+                projectPosts.forEach(post => {
+                    const text = post.textContent.toLowerCase();
+                    if (text.includes(filter)) {
+                        post.style.display = '';
+                    } else {
+                        post.style.display = 'none';
+                    }
+                });
+            });
+
+            // GSAP Animations
+            gsap.from("header", { duration: 1, y: -100, opacity: 0, ease: "bounce" });
+            gsap.from("#projects h1", { duration: 1, x: -100, opacity: 0, delay: 0.5 });
+            gsap.from("#search", { duration: 1, x: 100, opacity: 0, delay: 1 });
+            gsap.from("#projects ul li", { duration: 1, y: 100, opacity: 0, delay: 1.5, stagger: 0.2 });
+        });
+    </script>
+    <style>
+        body {
+            font-family: 'Source Sans Pro', Arial, sans-serif; /* Updated font */
+            margin: 0;
+            padding: 0;
+            background: url('assets/image5.jpg') no-repeat center center fixed; /* Background image updated to image5.jpg */
+            background-size: cover; /* Ensure full screen size */
+            color: #333;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1rem 0;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            margin: 0 1rem;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+        main {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        section {
+            margin-bottom: 2rem;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+        }
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+        .social-icons a {
+            color: #fff;
+            margin: 0 0.5rem;
+            font-size: 1.5rem;
+        }
+        #projects ul {
+            list-style: none;
+            padding: 0;
+        }
+        #projects ul li {
+            background: linear-gradient(135deg, #6a0dad, #ff6347);
+            margin: 1rem 0;
+            padding: 1rem;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transform: perspective(100px) rotateY(0.5deg) rotateX(0.5deg);
+        }
+        #projects ul li:hover {
+            transform: translateY(-5px) rotateY(0deg) rotateX(0deg);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        #projects ul li a {
+            text-decoration: none;
+            color: #333;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        #projects ul li .post-date {
+            display: block;
+            margin-top: 0.5rem;
+            color: #777;
+        }
+        #search {
+            width: 100%;
+            padding: 1rem;
+            margin-bottom: 2rem;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease;
+        }
+        #search:focus {
+            outline: none;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="about.html"><i class="fas fa-user"></i> About</a></li>
+                <li><a href="resume.html"><i class="fas fa-file-alt"></i> Resume</a></li>
+                <li><a href="projects.html"><i class="fas fa-project-diagram"></i> Projects</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="projects" class="animate__animated animate__fadeInUp">
+            <h1>Projects</h1>
+            <input type="text" id="search" placeholder="Search projects...">
+            <ul>
+                <li>
+                    <a href="https://github.com/ozzy2410/project1">Math Exercises</a>
+                    <span class="post-date">Created a program to perform simple math calculations with conditions and specific outputs.</span>
+                </li>
+                <li>
+                    <a href="https://github.com/ozzy2410/project2">Mad Libs Generator</a>
+                    <span class="post-date">Developed a Mad Libs game where user inputs complete a prewritten story template.</span>
+                </li>
+                <li>
+                    <a href="https://github.com/ozzy2410/project3">Number-Guessing Game</a>
+                    <span class="post-date">Built a game where the user guesses a random number generated by the computer with hints provided.</span>
+                </li>
+                <li>
+                    <a href="https://github.com/ozzy2410/project4">Password Generator</a>
+                    <span class="post-date">Designed a program to generate random passwords with customizable parameters.</span>
+                </li>
+                <li>
+                    <a href="https://github.com/ozzy2410/project5">Rock, Paper, Scissors</a>
+                    <span class="post-date">Coded the classic game where the user plays against the computer using the random module.</span>
+                </li>
+                <li>
+                    <a href="https://github.com/ozzy2410/project6">Hangman</a>
+                    <span class="post-date">Created a word guessing game where the user guesses letters to reveal a hidden word.</span>
+                </li>
+                <li>
+                    <a href="https://github.com/ozzy2410/project7">Contacts List</a>
+                    <span class="post-date">Developed a functional app to manage contacts, allowing adding, updating, searching, and deleting entries.</span>
+                </li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 John Doe. All rights reserved.</p>
+        <div class="social-icons">
+            <a href="http://au.linkedin.com/in/osmanorka" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://twitter.com/osmanorka" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="mailto:15340@coderacademy.edu.au"><i class="fas fa-envelope"></i></a>
+            <a href="https://discord.com/users/ozzy8546" target="_blank"><i class="fab fa-discord"></i></a>
+        </div>
+    </footer>
+</body>
+</html>

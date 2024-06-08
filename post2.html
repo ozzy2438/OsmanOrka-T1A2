@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Blog Post 2</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="https://unpkg.com/ionicons@5.5.2/dist/css/ionicons.min.css">
+    <link rel="stylesheet" href="https://use.typekit.net/xyz123.css"> <!-- Adobe Fonts link -->
+    <link rel="stylesheet" href="animate.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // GSAP Animations
+            gsap.from("header", { duration: 1, y: -100, opacity: 0, ease: "bounce" });
+            gsap.from("article header h1", { duration: 1, x: -100, opacity: 0, delay: 0.5 });
+            gsap.from("article section img", { duration: 1, scale: 0.5, opacity: 0, delay: 1 });
+            gsap.from("article section p, article section h2, article section ul", { duration: 1, y: 100, opacity: 0, delay: 1.5, stagger: 0.2 });
+        });
+    </script>
+    <style>
+        body {
+            font-family: 'Source Sans Pro', Arial, sans-serif; /* Updated font */
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        /* Other styles remain unchanged */
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html"><i class="ionicons ion-home"></i> Home</a></li>
+                <li><a href="about.html"><i class="ionicons ion-person"></i> About</a></li>
+                <li><a href="resume.html"><i class="ionicons ion-document"></i> Resume</a></li>
+                <li><a href="projects.html"><i class="ionicons ion-chatbubbles"></i> Blog</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article>
+            <header>
+                <h1>Understanding the Basics of Docker</h1>
+                <p>Published on: October 10, 2023</p>
+            </header>
+            <section>
+                <img src="images/docker_basics.jpg" alt="Docker Basics">
+                <p>Docker has revolutionized the way we develop and deploy applications. In this post, we will explore the basics of Docker, its components, and how it can benefit your development workflow.</p>
+                <h2>What is Docker?</h2>
+                <p>Docker is an open-source platform that automates the deployment of applications inside lightweight, portable containers. Containers include everything needed to run an application, such as the code, runtime, libraries, and system tools.</p>
+                <h2>Key Components of Docker</h2>
+                <ul>
+                    <li><strong>Docker Engine:</strong> The core component that creates and runs Docker containers.</li>
+                    <li><strong>Docker Images:</strong> Read-only templates used to create containers. Images are built from Dockerfiles.</li>
+                    <li><strong>Docker Containers:</strong> Instances of Docker images that run applications.</li>
+                    <li><strong>Docker Hub:</strong> A cloud-based registry service for sharing Docker images.</li>
+                </ul>
+                <h2>Benefits of Using Docker</h2>
+                <p>Docker offers several advantages, including:</p>
+                <ul>
+                    <li><strong>Portability:</strong> Docker containers can run on any system that supports Docker, ensuring consistent environments across development, testing, and production.</li>
+                    <li><strong>Scalability:</strong> Docker makes it easy to scale applications horizontally by adding more containers.</li>
+                    <li><strong>Efficiency:</strong> Containers share the host system's kernel, making them more lightweight and efficient than traditional virtual machines.</li>
+                </ul>
+                <h2>Getting Started with Docker</h2>
+                <p>To get started with Docker, you need to install Docker Engine on your system. Once installed, you can create a Dockerfile to define your application's environment and build a Docker image from it. Finally, you can run the image as a container.</p>
+                <p>For more detailed instructions, refer to the official Docker documentation.</p>
+            </section>
+        </article>
+    </main>
+    <footer>
+        <p>&copy; 2023 John Doe. All rights reserved.</p>
+    </footer>
+</body>
+</html>

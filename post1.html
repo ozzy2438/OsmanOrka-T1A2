@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Blog Post 1</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="https://unpkg.com/ionicons@5.5.2/dist/css/ionicons.min.css">
+    <link rel="stylesheet" href="https://use.typekit.net/xyz123.css"> <!-- Adobe Fonts link -->
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html"><i class="ionicons ion-home"></i> Home</a></li>
+                <li><a href="about.html"><i class="ionicons ion-person"></i> About</a></li>
+                <li><a href="resume.html"><i class="ionicons ion-document"></i> Resume</a></li>
+                <li><a href="projects.html"><i class="ionicons ion-chatbubbles"></i> Blog</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article>
+            <header>
+                <h1>Understanding JavaScript Closures</h1>
+                <p>Published on: January 1, 2023</p>
+            </header>
+            <section>
+                <img src="images/js-closures.png" alt="JavaScript Closures">
+                <p>JavaScript closures are a fundamental concept that every JavaScript developer should understand. In this post, we will explore what closures are, how they work, and why they are useful.</p>
+                <h2>What is a Closure?</h2>
+                <p>A closure is a function that has access to its own scope, the scope of the outer function, and the global scope. This means that a closure can remember and access variables and arguments of its outer function even after the function has finished executing.</p>
+                <h2>How Closures Work</h2>
+                <p>Closures are created every time a function is created. To understand how closures work, let's look at an example:</p>
+                <pre><code>function outerFunction() {
+    var outerVariable = 'I am from outer function';
+
+    function innerFunction() {
+        console.log(outerVariable);
+    }
+
+    return innerFunction;
+}
+
+var closure = outerFunction();
+closure(); // Output: I am from outer function
+                </code></pre>
+                <p>In the example above, <code>innerFunction</code> is a closure that has access to the <code>outerVariable</code> defined in <code>outerFunction</code>. Even after <code>outerFunction</code> has finished executing, the closure retains access to <code>outerVariable</code>.</p>
+                <h2>Why Use Closures?</h2>
+                <p>Closures are useful for several reasons:</p>
+                <ul>
+                    <li>They allow for data encapsulation and privacy.</li>
+                    <li>They help in creating function factories.</li>
+                    <li>They enable the creation of higher-order functions.</li>
+                </ul>
+                <p>Understanding and using closures effectively can greatly enhance your JavaScript programming skills.</p>
+            </section>
+        </article>
+    </main>
+    <footer>
+        <p>&copy; 2023 John Doe. All rights reserved.</p>
+    </footer>
+</body>
+</html>

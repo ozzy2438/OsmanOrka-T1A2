@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional portfolio of John Doe, a developer and IT professional.">
+    <title>Portfolio - Home</title>
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://use.typekit.net/xyz123.css"> <!-- Adobe Fonts link -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/froala-design-blocks/2.0.1/css/froala_blocks.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- GSAP for animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/object-fit-images/3.2.4/ofi.min.js"></script>
+
+    <!-- TextFit for dynamic text resizing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/textfit/2.4.0/textFit.min.js"></script>
+
+    <!-- HTML5 Tooltips -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5tooltipsjs/1.7.3/html5tooltips.min.js"></script>
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const greeting = document.getElementById('greeting');
+            const hour = new Date().getHours();
+            if (hour < 12) {
+                greeting.textContent = 'Good Morning!';
+            } else if (hour < 18) {
+                greeting.textContent = 'Good Afternoon!';
+            } else {
+                greeting.textContent = 'Good Evening!';
+            }
+
+            gsap.from("header", { duration: 1, y: -100, opacity: 0, ease: "bounce" });
+            gsap.from("#home-intro", { duration: 1, x: -100, opacity: 0, delay: 0.5 });
+            gsap.from("#contact-info", { duration: 1, x: 100, opacity: 0, delay: 1 });
+            gsap.from("#professional-links", { duration: 1, y: 100, opacity: 0, delay: 1.5 });
+
+            textFit(document.querySelectorAll('.dynamic-text'), {alignHoriz: true, multiLine: true});
+
+            html5tooltips({
+                animateFunction: "foldIn",
+                color: "rgba(0,0,0,0.5)",
+                contentText: "Dynamic and interactive tooltips",
+                stickTo: "bottom"
+            });
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/5.0.0/imagesloaded.pkgd.min.js"></script>
+    <script>
+        $(window).on('load', function() {
+            $('body').imagesLoaded().done(function(instance) {
+                console.log('All images are loaded.');
+            }).fail(function() {
+                console.log('One or more images failed to load.');
+            });
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flexMenu/1.6.2/flexmenu.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('nav ul').flexMenu({
+                threshold: 4,
+                cutoff: 2,
+                linkText: 'More',
+                linkTitle: 'View More',
+                linkTextAll: 'Menu',
+                linkTitleAll: 'Open/Close Menu',
+                showOnHover: true,
+                popupAbsolute: true,
+                popupClass: 'flexMenu-popup'
+            });
+        });
+    </script>
+    <style>
+        body {     
+            font-family: 'Source Sans Pro', Arial, sans-serif; /* Updated font */
+            margin: 0;
+            padding: 0;
+            background: url('assets/image7.jpg') no-repeat center center fixed; /* Updated background image */
+            background-size: cover; /* Ensure full screen size */
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden; /* Prevent scrolling */
+            background-color: rgba(0, 0, 0, 0.7); /* Darker background color */
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center; /* Center the navigation menu */
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            margin: 0; /* Remove default margin */
+        }
+        nav ul li {
+            margin: 0 1rem;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+        main {
+            display: flex;
+            flex: 1;
+            overflow: auto; /* Added to allow scrolling within the main content */
+            margin-top: 1rem; /* Space between header and main content */
+        }
+        .left-column {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-right: 1rem; /* Space between columns */
+        }
+        .right-column {
+            flex: 1;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: flex-start;
+            padding-left: 1rem; /* Space between columns */
+        }
+        section {
+            margin-bottom: 2rem;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            font-size: 0.9rem; /* Slightly smaller font size for the footer */
+        }
+        .social-icons {
+            display: none; /* Icons removed as per instruction */
+        }
+        .contact-card {
+            background: rgba(255, 255, 255, 0.95); /* Less transparent for better visibility */
+            padding: 1rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-top: 2rem;
+            width: 100%; /* Full width for better visibility */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center; /* Center text for better readability */
+        }
+        .contact-card h2 {
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: #0056b3; /* Dark blue color for headings */
+        }
+        .contact-card p {
+            margin-bottom: 1rem;
+            color: #555; /* Darker font color for better readability */
+        }
+        .curved-column {
+            background: linear-gradient(to right, #ff6b6b, #ffa500);
+            padding: 1rem;
+            border-radius: 20px;
+            color: #fff;
+            text-align: center;
+            margin-bottom: 1rem; /* Space between sections */
+        }
+        .colorful-column {
+            background: linear-gradient(to right, #00c6ff, #0072ff);
+            padding: 1rem;
+            border-radius: 20px;
+            color: #fff;
+            text-align: center;
+            margin-bottom: 1rem; /* Space between sections */
+        }
+        .animated-image {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            object-fit: cover;
+            margin: 1rem auto 0;
+            display: block;
+        }
+        .dynamic-text {
+            font-size: 2rem; /* Larger font size for better visibility */
+            color: #0072ff; /* Bright blue color for dynamic text */
+        }
+        @media (max-width: 768px) {
+            main {
+                flex-direction: column;
+                align-items: center;
+            }
+            .left-column, .right-column {
+                padding: 0;
+                flex: none;
+                width: 100%; /* Full width in small screens */
+            }
+            nav ul li {
+                margin: 0 0.5rem; /* Less margin on smaller screens */
+            }
+            .contact-card, .curved-column, .colorful-column {
+                width: auto; /* Adjust width to ensure padding is considered */
+            }
+        }
+        @media (max-width: 480px) {
+            header, footer {
+                padding: 0.8rem 0; /* Reduce padding in smaller screens */
+            }
+            nav ul li a {
+                font-size: 1rem; /* Smaller font size for navigation links on very small screens */
+            }
+            .social-icons a {
+                margin: 0 0.3rem; /* Reduce spacing around social icons for smaller screens */
+                font-size: 1.2rem; /* Smaller icons in footer */
+            }
+            .dynamic-text {
+                font-size: 1.5rem; /* Reduce font size to fit smaller screens */
+            }
+            .contact-card h2, .curved-column h2, .colorful-column h2 {
+                font-size: 1.2rem; /* Smaller headings in the contact and professional links cards */
+            }
+            .animated-image {
+                max-width: 250px; /* Smaller images on very small screens */
+            }
+        }
+
+        /* Additional Styling for Better Layout and Color Contrast */
+        .contact-card a, .colorful-column a, .curved-column a {
+            color: #ffffff; /* Ensure links are white in colored sections */
+            text-decoration: underline; /* Suggest interactivity with underline */
+        }
+        .contact-card a:hover, .colorful-column a:hover, .curved-column a:hover {
+            text-decoration: none; /* Remove underline on hover for cleaner look */
+            color: #dddddd; /* Light grey to indicate hover state */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="about.html"><i class="fas fa-user"></i> About</a></li>
+                <li><a href="resume.pdf"><i class="fas fa-file-alt"></i> Resume</a></li>
+                <li><a href="projects.html"><i class="fas fa-projects"></i> Projects</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="left-column">
+            <section id="home-intro" class="animate__animated animate__fadeInDown">
+                <div class="curved-column">
+                    <h1 id="greeting" style="color: #00c6ff; font-style: italic;">Good Evening!</h1>
+                    <img src="assets/image2.jpg" class="animated-image animate__animated animate__bounceIn" alt="Animated Image">
+                </div>
+                <p style="color: #0072ff; font-weight: bold;">Welcome to my professional portfolio.My name is Osman Orka. I am a developer and IT professional with experience in web development and software engineering.</p>
+            </section>
+        </div>
+
+        <div class="right-column">
+            <section id="contact-info" class="contact-card">
+                <div class="curved-column">
+                    <h2>Contact Information</h2>
+                    <p><i class="fas fa-envelope"></i> Email: <a href="mailto:john.doe@example.com">john.doe@example.com</a></p>
+                    <p><i class="fas fa-phone"></i> Phone: <a href="tel:+1234567890">(123) 456-7890</a></p>
+                    <p><i class="fas fa-map-marker-alt"></i> Location: City, Country</p>
+                </div>
+            </section>
+
+            <section id="professional-links" class="contact-card">
+                <div class="colorful-column">
+                    <h2>Professional Links</h2>
+                    <ul>
+                        <li><a href="https://github.com/johndoe" target="_blank"><i class="fab fa-github"></i> GitHub</a></li>
+                        <li><a href="https://www.linkedin.com/in/johndoe" target="_blank" class="animate__animated animate__bounceIn"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+                        <li><a href="https://twitter.com/johndoe" target="_blank" class="animate__animated animate__bounceIn"><i class="fab fa-twitter"></i> Twitter</a></li>
+                        <li><a href="https://discord.com/users/johndoe" target="_blank" class="animate__animated animate__bounceIn"><i class="fab fa-discord"></i> Discord</a></li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Osman Orka. All rights reserved.</p>
+        <div class="social-icons">
+            <!-- Social icons removed as per instruction -->
+        </div>
+    </footer>
+</body>
+</html>

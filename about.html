@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - About</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="responsive.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-animate/1.8.3/angular-animate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anima/0.4.0/anima.min.js"></script>
+    <style>
+        body {
+            font-family: 'Source Sans Pro', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('assets/image3.jpg') no-repeat center center fixed; /* Background image inserted */
+            background-size: cover; /* Ensure full screen size */
+            filter: brightness(70%); /* Darken the background more */
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .screen {
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            padding: 2rem;
+            border-radius: 10px;
+            overflow: hidden;
+            animation: fadeIn 2s ease-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1rem 0;
+            animation: slideDown 1s ease-out;
+        }
+        @keyframes slideDown {
+            from { transform: translateY(-100%); }
+            to { transform: translateY(0); }
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            margin: 0 1rem;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+        main {
+            padding: 2rem;
+            overflow: hidden;
+        }
+        section {
+            margin-bottom: 2rem;
+            background-color: #fff;
+            padding: 1rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+            transform: perspective(800px) rotateX(10deg);
+            transition: transform 0.3s ease-in-out;
+            animation: animaFadeIn 2s ease-out;
+        }
+        section:hover {
+            transform: perspective(800px) rotateX(0deg);
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            animation: slideUp 1s ease-out;
+        }
+        @keyframes slideUp {
+            from { transform: translateY(100%); }
+            to { transform: translateY(0); }
+        }
+        #about-me {
+            background-color: #f0e68c; /* Light khaki background */
+            animation: animaSlideRight 1.5s ease-out;
+        }
+        #skills {
+            background-color: #add8e6; /* Light blue background */
+            animation: animaSlideLeft 1.5s ease-out;
+        }
+        #interests {
+            background-color: #98fb98; /* Pale green background */
+            animation: animaSlideRight 1.5s ease-out;
+        }
+        #professional-knowledge {
+            background-color: #ffb6c1; /* Light pink background */
+            animation: animaSlideLeft 1.5s ease-out;
+        }
+        @keyframes animaSlideRight {
+            from { transform: translateX(-100%); }
+            to { transform: translateX(0); }
+        }
+        @keyframes animaSlideLeft {
+            from { transform: translateX(100%); }
+            to { transform: translateX(0); }
+        }
+    </style>
+</head>
+<body ng-app="portfolioAnimations">
+    <div class="screen" ng-animate="'fadeIn'">
+        <!-- Header -->
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="resume.html">Resume</a></li>
+                    <li><a href="projects.html">Blog</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Main Content -->
+        <main>
+            <section id="about-me">
+                <h1>About Me</h1>
+                <p>Hello! I'm Osman Orka, a passionate developer and IT professional with a flair for creativity and innovation. With a robust background in software development and IT infrastructure, I excel at solving complex problems and delivering high-quality results. My journey in the tech world is driven by a relentless curiosity and a commitment to continuous learning. Whether it's developing cutting-edge software solutions or optimizing IT systems, I bring a blend of technical expertise and creative thinking to every project. Let's connect and create something amazing together!</p>
+            </section>
+            <section id="skills">
+                <h2>Skills</h2>
+                <ul>
+                    <li>Programming Languages: Intermediate level Python, C#</li>
+                    <li>Web Development: Beginner with HTML and CSS</li>
+                    <li>Projects: Web Scraper, Hangman Game, Alarm Clock, Handwritten Project, Automate Social Media Messages, Snake Game</li>
+                </ul>
+            </section>
+            <section id="interests">
+                <h2>Interests</h2>
+                <p>When I'm not coding, I enjoy exploring the latest tech trends, contributing to open-source projects, and participating in hackathons. I also love traveling, reading books, and watching cinema.</p>
+            </section>
+            <section id="professional-knowledge">
+                <h2>Professional Knowledge</h2>
+                <p>With years of experience in the tech industry, I have honed my skills in various domains, including software development, IT infrastructure, and cloud computing. My professional journey has equipped me with the knowledge and expertise to tackle diverse challenges and deliver exceptional results.</p>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2023 John Doe. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>

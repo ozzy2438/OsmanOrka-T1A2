@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Resume</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="https://unpkg.com/ionicons@5.5.2/dist/css/ionicons.min.css">
+    <link rel="stylesheet" href="https://use.typekit.net/xyz123.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/just-animate/2.6.2/just-animate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fitty/2.4.2/fitty.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/golden-layout/2.6.0/cjs/ts/golden-layout.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flexMenu/1.6.2/flexmenu.min.js"></script> <!-- Added flexMenu script -->
+    <style>
+        body {
+            background: url('assets/image4.jpg') no-repeat center center fixed;
+            background-size: cover;
+            overflow-y: hidden;
+            font-family: 'Roboto', sans-serif;
+            color: #333;
+        }
+        header {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 10px;
+            text-align: center;
+        }
+        header nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        header nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+        header nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+        main {
+            display: flex;
+            flex-direction: column; /* Changed to column for vertical layout */
+            justify-content: flex-start; /* Adjusted for vertical layout */
+            padding: 20px;
+            margin-top: 20px;
+        }
+        section {
+            flex: 1;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: -19px; /* Adjusted margin for vertical layout */
+            width: 80%; /* Adjusted width for full width */
+        }
+        #resume {
+            background: rgba(255, 217, 179, 0.9);
+        }
+        #work-history {
+            background: rgba(179, 255, 217, 0.9);
+        }
+        #education {
+            background: rgba(179, 217, 255, 0.9);
+            color: #333; /* Changed text color for visibility */
+            order: 0.5; /* Moved to the top */
+        }
+        h1, h2, h3 {
+            margin-top: 0;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 10px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+        section p {
+            font-size: 0.8em; /* Reduced font size for better readability */
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            color: #fff;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            background: none;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const timeline = just.animate({
+                targets: "header",
+                duration: 1000,
+                web: {
+                    transform: ['translateY(-100px)', 'translateY(0px)'],
+                    opacity: [0, 1]
+                },
+                easing: 'bounce'
+            });
+
+            timeline.play();
+
+            just.animate({
+                targets: "#resume h1",
+                duration: 1000,
+                delay: 500,
+                web: {
+                    transform: ['translateX(-100px)', 'translateX(0px)'],
+                    opacity: [0, 1]
+                }
+            }).play();
+
+            just.animate({
+                targets: "#work-history",
+                duration: 1000,
+                delay: 1000,
+                web: {
+                    transform: ['translateX(100px)', 'translateX(0px)'],
+                    opacity: [0, 1]
+                }
+            }).play();
+
+            just.animate({
+                targets: "#education",
+                duration: 1000,
+                delay: 1500,
+                web: {
+                    transform: ['translateY(200px)', 'translateY(0px)'],
+                    opacity: [0, 1]
+                }
+            }).play();
+
+            fitty('#resume h1', {
+                minSize: 14,
+                maxSize: 46,
+                multiLine: true
+            });
+
+            $('nav ul').flexMenu({
+                threshold: 3,
+                linkText: 'More'
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html"><i class="ionicons ion-home"></i> Home</a></li>
+                <li><a href="about.html"><i the "ionicons ion-person"></i> About</a></li>
+                <li><a href="resume.html"><i class="ionicons ion-document"></i> Resume</a></li>
+                <li><a href="projects.html"><i class="ionicons ion-chatbubbles"></i> Projects</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="education" class="animate__animated animate__fadeInTopLeft">
+            <h2>Education</h2>
+            <ul>
+                <li>
+                    <h3>Bachelor of Mechanical Engineering</h3>
+                    <p><strong>Institution:</strong> Kocaeli University</p>
+                    <p><strong>Duration:</strong> September 1995 - May 2000</p>
+                </li>
+                <li>
+                    <h3>Diploma of Cybersecurity</h3>
+                    <p><strong>Institution:</strong> Torrens University</p>
+                    <p><strong>Duration:</strong> 2022 - 2023</p>
+                </li>
+                <li>
+                    <h3>Web Development</h3>
+                    <p><strong>Institution:</strong> Coder Academy</p>
+                    <p><strong>Duration:</strong> 2022 - 2023</p>
+                </li>
+            </ul>
+        </section>
+        <section id="resume" class="animate__animated animate__fadeInTopLeft">
+            <h1>Resume</h1>
+            <p>Below is a summary of my professional experience and education. For a detailed view, please download my full resume.</p>
+            <a href="resume.pdf" target="_blank" class="btn"><i class="ionicons ion-download"></i> Download Resume (PDF)</a>
+        </section>
+        <section id="work-history" class="animate__animated animate__fadeInTopLeft">
+            <h2>Work History</h2>
+            <ul>
+                <li>
+                    <h3>Executive Assistant</h3>
+                    <p><strong>Duration:</strong> January 2013-2016 - Present</p>
+                    <p><strong>Responsibilities:</strong> Managing executive schedules, organizing company records, facilitating communication across departments, and supporting leadership with strategic initiatives.</p>
+                </li>
+                <li>
+                    <h3>Software Manager of Local Turkish Newspaper</h3>
+                    <p><strong>Duration:</strong> June 2005 - December 2006</p>
+                    <p><strong>Responsibilities:</strong> As a local newspaper employee, developed web applications, collaborated with cross-functional teams, and maintained existing codebases.</p>
+                </li>
+                <li>
+                    <h3>Organizer of Fast Food Restaurant</h3>
+                    <p><strong>Duration:</strong> January 2002 - May 2003</p>
+                    <p><strong>Responsibilities:</strong> Oversaw the efficient operation of the fast food restaurant, including managing staff, inventory, and customer service. Collaborated with the IT team to develop and maintain web-based systems to streamline business processes.</p>
+                </li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Osman Orka. All rights reserved.</p>
+    </footer>
+</body>
+</html>
