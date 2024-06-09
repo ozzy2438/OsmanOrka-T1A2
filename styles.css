@@ -159,36 +159,62 @@ footer {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Custom animation duration */
-.animate__fadeInDown {
-    --animate-duration: 1s; /* Change the duration as needed */
+/* Base style adjustments */
+img, .container {
+    max-width: 100%;
+    height: auto;
 }
 
-/* Add flipInX animation */
-.animate__flipInX {
-    --animate-duration: 1s; /* Change the duration as needed */
+.container {
+    padding: 0 15px;
+    margin: auto;
 }
 
-/* Skeleton Loader Styles */
-.skeleton {
-    background-color: #e0e0e0;
-    color: transparent;
-    border-radius: 4px;
-    display: inline-block;
-    height: 1em;
-    line-height: 1;
-    width: 100%;
-    animation: pulse 1.5s infinite;
+html {
+    font-size: 16px;
 }
 
-@keyframes pulse {
-    0% {
-        background-color: #e0e0e0;
+@media only screen and (max-width: 768px) {
+    html {
+        font-size: 14px;
     }
-    50% {
-        background-color: #f0f0f0;
+}
+
+@media only screen and (max-width: 600px) {
+    html {
+        font-size: 12px;
     }
-    100% {
-        background-color: #e0e0e0;
+}
+
+@media only screen and (max-width: 600px) {
+    body {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: stretch;
+        height: auto;
+        padding: 20px;
+        background: var(--background-color); /* Daha sade bir arka plan */
+    }
+
+    header, footer {
+        padding: 10px 0;
+    }
+
+    header nav ul {
+        flex-direction: column;
+    }
+
+    header nav ul li {
+        text-align: center;
+        margin: 5px 0;
+    }
+
+    main {
+        padding: 10px;
+    }
+
+    section {
+        margin-bottom: 10px;
+        padding: 10px;
     }
 }
