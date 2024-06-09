@@ -14,10 +14,15 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/golden-layout/2.6.0/cjs/ts/golden-layout.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flexMenu/1.6.2/flexmenu.min.js"></script> <!-- Added flexMenu script -->
     <style>
+        html, body {
+            height: 100%; /* Tam yükseklik */
+            margin: 0;
+            padding: 0;
+            overflow-y: auto; /* Dikey kaydırmayı etkinleştir */
+        }
         body {
             background: url('assets/image4.jpg') no-repeat center center fixed;
             background-size: cover;
-            overflow-y: auto; /* Dikey kaydırmayı etkinleştir */
             font-family: 'Roboto', sans-serif;
             color: #333;
         }
@@ -50,7 +55,7 @@
             border-radius: 8px;
             padding: 20px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin: -19px; /* Adjusted margin for vertical layout */
+            margin-bottom: 20px; /* Adjusted margin for vertical layout */
             width: 80%; /* Adjusted width for full width */
         }
         #resume {
@@ -62,7 +67,6 @@
         #education {
             background: rgba(179, 217, 255, 0.9);
             color: #333; /* Changed text color for visibility */
-            order: 0.5; /* Moved to the top */
         }
         h1, h2, h3 {
             margin-top: 0;
@@ -87,10 +91,7 @@
             text-align: center;
             padding: 10px;
             color: #fff;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
-            background: none;
+            background: rgba(0, 0, 0, 0.8);
         }
     </style>
     <script>
@@ -155,7 +156,7 @@
         <nav>
             <ul>
                 <li><a href="index.html"><i class="ionicons ion-home"></i> Home</a></li>
-                <li><a href="about.html"><i the "ionicons ion-person"></i> About</a></li>
+                <li><a href="about.html"><i class="ionicons ion-person"></i> About</a></li>
                 <li><a href="resume.html"><i class="ionicons ion-document"></i> Resume</a></li>
                 <li><a href="projects.html"><i class="ionicons ion-chatbubbles"></i> Projects</a></li>
             </ul>
