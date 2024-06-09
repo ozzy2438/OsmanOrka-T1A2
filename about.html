@@ -3,25 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - About</title>
+    <title>Portfolio - Resume</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="responsive.css">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-animate/1.8.3/angular-animate.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/anima/0.4.0/anima.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/ionicons@5.5.2/dist/css/ionicons.min.css">
+    <link rel="stylesheet" href="https://use.typekit.net/xyz123.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/just-animate/2.6.2/just-animate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fitty/2.4.2/fitty.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/golden-layout/2.6.0/cjs/ts/golden-layout.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flexMenu/1.6.2/flexmenu.min.js"></script>
     <style>
         html, body {
             height: 100%;
             margin: 0;
             padding: 0;
-            overflow: hidden; /* Tam ekran kaydırmayı kapat */
+            overflow-y: auto; /* Enable vertical scrolling */
+            overflow-x: hidden; /* Disable horizontal scrolling */
         }
         body {
-            font-family: 'Source Sans Pro', Arial, sans-serif;
-            background: url('assets/image3.jpg') no-repeat center center fixed;
+            background: url('assets/image4.jpg') no-repeat center center fixed;
             background-size: cover;
-            filter: brightness(70%);
+            font-family: 'Roboto', sans-serif;
             color: #333;
             display: flex;
             flex-direction: column;
@@ -30,155 +33,204 @@
             min-height: 100vh;
             overflow: auto;
         }
-        .screen {
-            width: 100%;
-            max-width: 1200px;
-            background-color: rgba(255, 255, 255, 0.8);
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-            padding: 2rem;
-            border-radius: 10px;
-            overflow: auto;
-            animation: fadeIn 2s ease-out;
-            margin: 2rem 0; /* Arkaplan kaydırmasını düzenlemek için margin ekle */
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
         header {
-            background-color: #333;
-            color: #fff;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 10px;
+            text-align: center;
             width: 100%;
-            padding: 1rem 0;
-            animation: slideDown 1s ease-out;
-            position: fixed; /* Header sabit pozisyon */
+            position: fixed;
             top: 0;
-            left: 0;
             z-index: 1000;
         }
-        @keyframes slideDown {
-            from { transform: translateY(-100%); }
-            to { transform: translateY(0); }
-        }
-        nav ul {
+        header nav ul {
             list-style: none;
             padding: 0;
             display: flex;
             justify-content: center;
             margin: 0;
         }
-        nav ul li {
-            margin: 0 1rem;
+        header nav ul li {
+            display: inline;
+            margin: 0 10px;
         }
-        nav ul li a {
+        header nav ul li a {
             color: #fff;
             text-decoration: none;
-            font-size: 1.2rem;
         }
         main {
-            padding: 2rem 0;
-            margin-top: 5rem; /* Header'ın altına boşluk bırakmak için */
-            overflow: auto; /* İçeriğin kaydırılabilir olmasını sağla */
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 20px;
+            margin-top: 60px; /* Space for the fixed header */
             width: 100%;
-            flex: 1; /* Ana içeriğin esnemesini sağla */
+            overflow: auto;
+            flex: 1;
         }
         section {
-            margin-bottom: 2rem;
-            background-color: #fff;
-            padding: 1rem;
+            width: 100%;
+            max-width: 800px;
+            margin: 20px 0;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.8);
             border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
-            transform: perspective(800px) rotateX(10deg);
-            transition: transform 0.3s ease-in-out;
-            animation: animaFadeIn 2s ease-out;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
-        section:hover {
-            transform: perspective(800px) rotateX(0deg);
+        #resume {
+            background: rgba(255, 217, 179, 0.9);
+        }
+        #work-history {
+            background: rgba(179, 255, 217, 0.9);
+        }
+        #education {
+            background: rgba(179, 217, 255, 0.9);
+            color: #333;
+        }
+        h1, h2, h3 {
+            margin-top: 0;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 10px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .btn:hover {
+            background-color: #0056b3;
         }
         footer {
-            background-color: #333;
-            color: #fff;
-            width: 100%;
             text-align: center;
-            padding: 1rem 0;
-            animation: slideUp 1s ease-out;
-            position: fixed; /* Footer sabit pozisyon */
+            padding: 10px;
+            color: #fff;
+            background: rgba(0, 0, 0, 0.8);
+            width: 100%;
+            position: fixed;
             bottom: 0;
-            left: 0;
             z-index: 1000;
         }
-        @keyframes slideUp {
-            from { transform: translateY(100%); }
-            to { transform: translateY(0); }
-        }
-        #about-me {
-            background-color: #f0e68c;
-            animation: animaSlideRight 1.5s ease-out;
-        }
-        #skills {
-            background-color: #add8e6;
-            animation: animaSlideLeft 1.5s ease-out;
-        }
-        #interests {
-            background-color: #98fb98;
-            animation: animaSlideRight 1.5s ease-out;
-        }
-        #professional-knowledge {
-            background-color: #ffb6c1;
-            animation: animaSlideLeft 1.5s ease-out;
-        }
-        @keyframes animaSlideRight {
-            from { transform: translateX(-100%); }
-            to { transform: translateX(0); }
-        }
-        @keyframes animaSlideLeft {
-            from { transform: translateX(100%); }
-            to { transform: translateX(0); }
-        }
     </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const timeline = just.animate({
+                targets: "header",
+                duration: 1000,
+                web: {
+                    transform: ['translateY(-100px)', 'translateY(0px)'],
+                    opacity: [0, 1]
+                },
+                easing: 'bounce'
+            });
+
+            timeline.play();
+
+            just.animate({
+                targets: "#resume h1",
+                duration: 1000,
+                delay: 500,
+                web: {
+                    transform: ['translateX(-100px)', 'translateX(0px)'],
+                    opacity: [0, 1]
+                }
+            }).play();
+
+            just.animate({
+                targets: "#work-history",
+                duration: 1000,
+                delay: 1000,
+                web: {
+                    transform: ['translateX(100px)', 'translateX(0px)'],
+                    opacity: [0, 1]
+                }
+            }).play();
+
+            just.animate({
+                targets: "#education",
+                duration: 1000,
+                delay: 1500,
+                web: {
+                    transform: ['translateY(200px)', 'translateY(0px)'],
+                    opacity: [0, 1]
+                }
+            }).play();
+
+            fitty('#resume h1', {
+                minSize: 14,
+                maxSize: 46,
+                multiLine: true
+            });
+
+            $('nav ul').flexMenu({
+                threshold: 3,
+                linkText: 'More'
+            });
+        });
+    </script>
 </head>
-<body ng-app="portfolioAnimations">
-    <div class="screen" ng-animate="'fadeIn'">
-        <!-- Header -->
-        <header>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="resume.html">Resume</a></li>
-                    <li><a href="projects.html">Blog</a></li>
-                </ul>
-            </nav>
-        </header>
-
-        <!-- Main Content -->
-        <main>
-            <section id="about-me">
-                <h1>About Me</h1>
-                <p>Hello! I'm Osman Orka, a passionate developer and IT professional with a flair for creativity and innovation. With a robust background in software development and IT infrastructure, I excel at solving complex problems and delivering high-quality results. My journey in the tech world is driven by a relentless curiosity and a commitment to continuous learning. Whether it's developing cutting-edge software solutions or optimizing IT systems, I bring a blend of technical expertise and creative thinking to every project. Let's connect and create something amazing together!</p>
-            </section>
-            <section id="skills">
-                <h2>Skills</h2>
-                <ul>
-                    <li>Programming Languages: Intermediate level Python, C#</li>
-                    <li>Web Development: Beginner with HTML and CSS</li>
-                    <li>Projects: Web Scraper, Hangman Game, Alarm Clock, Handwritten Project, Automate Social Media Messages, Snake Game</li>
-                </ul>
-            </section>
-            <section id="interests">
-                <h2>Interests</h2>
-                <p>When I'm not coding, I enjoy exploring the latest tech trends, contributing to open-source projects, and participating in hackathons. I also love traveling, reading books, and watching cinema.</p>
-            </section>
-            <section id="professional-knowledge">
-                <h2>Professional Knowledge</h2>
-                <p>With years of experience in the tech industry, I have honed my skills in various domains, including software development, IT infrastructure, and cloud computing. My professional journey has equipped me with the knowledge and expertise to tackle diverse challenges and deliver exceptional results.</p>
-            </section>
-        </main>
-
-        <!-- Footer -->
-        <footer>
-            <p>&copy; 2023 Osman Orka. All rights reserved.</p>
-        </footer>
-    </div>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html"><i class="ionicons ion-home"></i> Home</a></li>
+                <li><a href="about.html"><i class="ionicons ion-person"></i> About</a></li>
+                <li><a href="resume.html"><i class="ionicons ion-document"></i> Resume</a></li>
+                <li><a href="projects.html"><i class="ionicons ion-chatbubbles"></i> Projects</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="education" class="animate__animated animate__fadeInTopLeft">
+            <h2>Education</h2>
+            <ul>
+                <li>
+                    <h3>Bachelor of Mechanical Engineering</h3>
+                    <p><strong>Institution:</strong> Kocaeli University</p>
+                    <p><strong>Duration:</strong> September 1995 - May 2000</p>
+                </li>
+                <li>
+                    <h3>Diploma of Cybersecurity</h3>
+                    <p><strong>Institution:</strong> Torrens University</p>
+                    <p><strong>Duration:</strong> 2022 - 2023</p>
+                </li>
+                <li>
+                    <h3>Web Development</h3>
+                    <p><strong>Institution:</strong> Coder Academy</p>
+                    <p><strong>Duration:</strong> 2022 - 2023</p>
+                </li>
+            </ul>
+        </section>
+        <section id="resume" class="animate__animated animate__fadeInTopLeft">
+            <h1>Resume</h1>
+            <p>Below is a summary of my professional experience and education. For a detailed view, please download my full resume.</p>
+            <a href="resume.pdf" target="_blank" class="btn"><i class="ionicons ion-download"></i> Download Resume (PDF)</a>
+        </section>
+        <section id="work-history" class="animate__animated animate__fadeInTopLeft">
+            <h2>Work History</h2>
+            <ul>
+                <li>
+                    <h3>Executive Assistant</h3>
+                    <p><strong>Duration:</strong> January 2013-2016 - Present</p>
+                    <p><strong>Responsibilities:</strong> Managing executive schedules, organizing company records, facilitating communication across departments, and supporting leadership with strategic initiatives.</p>
+                </li>
+                <li>
+                    <h3>Software Manager of Local Turkish Newspaper</h3>
+                    <p><strong>Duration:</strong> June 2005 - December 2006</p>
+                    <p><strong>Responsibilities:</strong> As a local newspaper employee, developed web applications, collaborated with cross-functional teams, and maintained existing codebases.</p>
+                </li>
+                <li>
+                    <h3>Organizer of Fast Food Restaurant</h3>
+                    <p><strong>Duration:</strong> January 2002 - May 2003</p>
+                    <p><strong>Responsibilities:</strong> Oversaw the efficient operation of the fast food restaurant, including managing staff, inventory, and customer service. Collaborated with the IT team to develop and maintain web-based systems to streamline business processes.</p>
+                </li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Osman Orka. All rights reserved.</p>
+    </footer>
 </body>
 </html>
