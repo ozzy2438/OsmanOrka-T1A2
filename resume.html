@@ -12,14 +12,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/just-animate/2.6.2/just-animate.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fitty/2.4.2/fitty.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/golden-layout/2.6.0/cjs/ts/golden-layout.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/flexMenu/1.6.2/flexmenu.min.js"></script> <!-- Added flexMenu script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flexMenu/1.6.2/flexmenu.min.js"></script>
     <style>
         html, body {
-            height: 100%; /* Tam yükseklik */
+            height: 100%;
             margin: 0;
             padding: 0;
-            overflow-y: auto; /* Dikey kaydırmayı etkinleştir */
-            overflow-x: hidden; /* Yatay kaydırmayı kapat */
+            overflow-y: auto; /* Enable vertical scrolling */
+            overflow-x: hidden; /* Disable horizontal scrolling */
         }
         body {
             background: url('assets/image4.jpg') no-repeat center center fixed;
@@ -56,6 +56,7 @@
         header nav ul li a {
             color: #fff;
             text-decoration: none;
+            font-size: 1rem; /* Daha küçük font boyutu */
         }
         main {
             display: flex;
@@ -63,7 +64,7 @@
             justify-content: flex-start;
             align-items: center;
             padding: 20px;
-            margin-top: 60px; /* Header'ın altında boşluk bırakmak için */
+            margin-top: 60px; /* Space for the fixed header */
             width: 100%;
             overflow: auto;
             flex: 1;
@@ -85,7 +86,7 @@
         }
         #education {
             background: rgba(179, 217, 255, 0.9);
-            color: #333; /* Changed text color for visibility */
+            color: #333;
         }
         h1, h2, h3 {
             margin-top: 0;

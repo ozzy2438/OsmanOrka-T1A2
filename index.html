@@ -81,47 +81,46 @@
     </script>
     <style>
         html, body {
-            height: 100%; /* Tam yükseklik */
+            height: 100%;
             margin: 0;
             padding: 0;
-            overflow-y: auto; /* Dikey kaydırmayı etkinleştir */
-            overflow-x: hidden; /* Yatay kaydırmayı kapat */
+            overflow-y: auto;
+            overflow-x: hidden;
         }
         body {     
-            font-family: 'Source Sans Pro', Arial, sans-serif; /* Updated font */
+            font-family: 'Source Sans Pro', Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background: url('assets/image7.jpg') no-repeat center center fixed; /* Updated background image */
-            background-size: cover; /* Ensure full screen size */
+            background: url('assets/image7.jpg') no-repeat center center fixed;
+            background-size: cover;
             color: #333;
             display: flex;
             flex-direction: column;
-            justify-content: flex-start;
+            justify-content: space-between;
             align-items: center;
-            min-height: 100vh; /* Yükseklik sınırlamasını min-height olarak değiştir */
-            overflow: auto;
+            min-height: 100vh;
         }
         header {
             background-color: #333;
             color: #fff;
             width: 100%;
             padding: 1rem 0;
-            text-align: center; /* Center the navigation menu */
+            text-align: center;
         }
         nav ul {
             list-style: none;
             padding: 0;
             display: flex;
             justify-content: center;
-            margin: 0; /* Remove default margin */
+            margin: 0;
         }
         nav ul li {
-            margin: 0 1rem;
+            margin: 0 0.5rem; /* Küçük boşluk */
         }
         nav ul li a {
             color: #fff;
             text-decoration: none;
-            font-size: 1.2rem;
+            font-size: 1rem; /* Daha küçük font boyutu */
         }
         main {
             display: flex;
@@ -129,15 +128,15 @@
             flex-direction: column;
             width: 100%;
             padding: 1rem;
-            overflow: auto; /* Added to allow scrolling within the main content */
-            margin-top: 1rem; /* Space between header and main content */
+            overflow: auto;
+            margin-top: 1rem;
         }
         .left-column {
             flex: 1;
             display: flex;
             justify-content: center;
             align-items: center;
-            padding-right: 1rem; /* Space between columns */
+            padding-right: 1rem;
         }
         .right-column {
             flex: 1;
@@ -145,7 +144,7 @@
             flex-direction: row;
             justify-content: center;
             align-items: flex-start;
-            padding-left: 1rem; /* Space between columns */
+            padding-left: 1rem;
         }
         section {
             margin-bottom: 2rem;
@@ -156,31 +155,31 @@
             width: 100%;
             text-align: center;
             padding: 1rem 0;
-            font-size: 0.9rem; /* Slightly smaller font size for the footer */
+            font-size: 0.9rem;
         }
         .social-icons {
-            display: none; /* Icons removed as per instruction */
+            display: none;
         }
         .contact-card {
-            background: rgba(255, 255, 255, 0.95); /* Less transparent for better visibility */
+            background: rgba(255, 255, 255, 0.95);
             padding: 1rem;
             border-radius: 10px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             margin-top: 2rem;
-            width: 100%; /* Full width for better visibility */
+            width: 100%;
             display: flex;
             flex-direction: column;
             align-items: center;
-            text-align: center; /* Center text for better readability */
+            text-align: center;
         }
         .contact-card h2 {
             font-weight: bold;
             margin-bottom: 1rem;
-            color: #0056b3; /* Dark blue color for headings */
+            color: #0056b3;
         }
         .contact-card p {
             margin-bottom: 1rem;
-            color: #555; /* Darker font color for better readability */
+            color: #555;
         }
         .curved-column {
             background: linear-gradient(to right, #ff6b6b, #ffa500);
@@ -188,7 +187,7 @@
             border-radius: 20px;
             color: #fff;
             text-align: center;
-            margin-bottom: 1rem; /* Space between sections */
+            margin-bottom: 1rem;
         }
         .colorful-column {
             background: linear-gradient(to right, #00c6ff, #0072ff);
@@ -196,7 +195,7 @@
             border-radius: 20px;
             color: #fff;
             text-align: center;
-            margin-bottom: 1rem; /* Space between sections */
+            margin-bottom: 1rem;
         }
         .animated-image {
             width: 100%;
@@ -207,8 +206,8 @@
             display: block;
         }
         .dynamic-text {
-            font-size: 2rem; /* Larger font size for better visibility */
-            color: #0072ff; /* Bright blue color for dynamic text */
+            font-size: 2rem;
+            color: #0072ff;
         }
         @media (max-width: 768px) {
             main {
@@ -218,41 +217,41 @@
             .left-column, .right-column {
                 padding: 0;
                 flex: none;
-                width: 100%; /* Full width in small screens */
+                width: 100%;
             }
             nav ul li {
-                margin: 0 0.5rem; /* Less margin on smaller screens */
+                margin: 0 0.5rem;
             }
             .contact-card, .curved-column, .colorful-column {
-                width: auto; /* Adjust width to ensure padding is considered */
+                width: auto;
             }
         }
         @media (max-width: 480px) {
             header, footer {
-                padding: 0.8rem 0; /* Reduce padding in smaller screens */
+                padding: 0.8rem 0;
             }
             nav ul li a {
-                font-size: 1rem; /* Smaller font size for navigation links on very small screens */
+                font-size: 0.9rem;
             }
             .dynamic-text {
-                font-size: 1.5rem; /* Reduce font size to fit smaller screens */
+                font-size: 1.5rem;
             }
             .contact-card h2, .curved-column h2, .colorful-column h2 {
-                font-size: 1.2rem; /* Smaller headings in the contact and professional links cards */
+                font-size: 1.2rem;
             }
             .animated-image {
-                max-width: 250px; /* Smaller images on very small screens */
+                max-width: 250px;
             }
         }
 
         /* Additional Styling for Better Layout and Color Contrast */
         .contact-card a, .colorful-column a, .curved-column a {
-            color: #ffffff; /* Ensure links are white in colored sections */
-            text-decoration: underline; /* Suggest interactivity with underline */
+            color: #ffffff;
+            text-decoration: underline;
         }
         .contact-card a:hover, .colorful-column a:hover, .curved-column a:hover {
-            text-decoration: none; /* Remove underline on hover for cleaner look */
-            color: #dddddd; /* Light grey to indicate hover state */
+            text-decoration: none;
+            color: #dddddd;
         }
     </style>
 </head>
@@ -272,34 +271,38 @@
 
     <!-- Main Content -->
     <main>
-        <section id="home-intro" class="animate__animated animate__fadeInDown">
-            <div class="curved-column">
-                <h1 id="greeting" style="color: #00c6ff; font-style: italic;">Good Evening!</h1>
-                <img src="assets/image2.jpg" class="animated-image animate__animated animate__bounceIn" alt="Animated Image">
-            </div>
-            <p style="color: #0072ff; font-weight: bold;">Welcome to my professional portfolio. My name is Osman Orka. I am a developer and IT professional with experience in web development and software engineering.</p>
-        </section>
+        <div class="left-column">
+            <section id="home-intro" class="animate__animated animate__fadeInDown">
+                <div class="curved-column">
+                    <h1 id="greeting" style="color: #00c6ff; font-style: italic;">Good Evening!</h1>
+                    <img src="assets/image2.jpg" class="animated-image animate__animated animate__bounceIn" alt="Animated Image">
+                </div>
+                <p style="color: #0072ff; font-weight: bold;">Welcome to my professional portfolio. My name is Osman Orka. I am a developer and IT professional with experience in web development and software engineering.</p>
+            </section>
+        </div>
 
-        <section id="contact-info" class="contact-card">
-            <div class="curved-column">
-                <h2>Contact Information</h2>
-                <p><i class="fas fa-envelope"></i> Email: <a href="mailto:john.doe@example.com">john.doe@example.com</a></p>
-                <p><i class="fas fa-phone"></i> Phone: <a href="tel:+1234567890">(123) 456-7890</a></p>
-                <p><i class="fas fa-map-marker-alt"></i> Location: City, Country</p>
-            </div>
-        </section>
+        <div class="right-column">
+            <section id="contact-info" class="contact-card">
+                <div class="curved-column">
+                    <h2>Contact Information</h2>
+                    <p><i class="fas fa-envelope"></i> Email: <a href="mailto:john.doe@example.com">john.doe@example.com</a></p>
+                    <p><i class="fas fa-phone"></i> Phone: <a href="tel:+1234567890">(123) 456-7890</a></p>
+                    <p><i class="fas fa-map-marker-alt"></i> Location: City, Country</p>
+                </div>
+            </section>
 
-        <section id="professional-links" class="contact-card">
-            <div class="colorful-column">
-                <h2>Professional Links</h2>
-                <ul>
-                    <li><a href="https://github.com/johndoe" target="_blank"><i class="fab fa-github"></i> GitHub</a></li>
-                    <li><a href="https://www.linkedin.com/in/johndoe" target="_blank" class="animate__animated animate__bounceIn"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
-                    <li><a href="https://twitter.com/johndoe" target="_blank" class="animate__animated animate__bounceIn"><i class="fab fa-twitter"></i> Twitter</a></li>
-                    <li><a href="https://discord.com/users/johndoe" target="_blank" class="animate__animated animate__bounceIn"><i class="fab fa-discord"></i> Discord</a></li>
-                </ul>
-            </div>
-        </section>
+            <section id="professional-links" class="contact-card">
+                <div class="colorful-column">
+                    <h2>Professional Links</h2>
+                    <ul>
+                        <li><a href="https://github.com/johndoe" target="_blank"><i class="fab fa-github"></i> GitHub</a></li>
+                        <li><a href="https://www.linkedin.com/in/johndoe" target="_blank" class="animate__animated animate__bounceIn"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+                        <li><a href="https://twitter.com/johndoe" target="_blank" class="animate__animated animate__bounceIn"><i class="fab fa-twitter"></i> Twitter</a></li>
+                        <li><a href="https://discord.com/users/johndoe" target="_blank" class="animate__animated animate__bounceIn"><i class="fab fa-discord"></i> Discord</a></li>
+                    </ul>
+                </div>
+            </section>
+        </div>
     </main>
 
     <!-- Footer -->
