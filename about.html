@@ -26,10 +26,10 @@
             filter: brightness(70%); /* Darken the background more */
             color: #333;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
+            justify-content: space-between;
             align-items: center;
             min-height: 100vh; /* Height constraint changed to min-height */
-            overflow-y: auto; /* Enable vertical scrolling */
         }
         .screen {
             width: 100%;
@@ -48,6 +48,7 @@
         header {
             background-color: #333;
             color: #fff;
+            width: 100%;
             padding: 1rem 0;
             animation: slideDown 1s ease-out;
         }
@@ -89,6 +90,7 @@
         footer {
             background-color: #333;
             color: #fff;
+            width: 100%;
             text-align: center;
             padding: 1rem 0;
             animation: slideUp 1s ease-out;
@@ -163,7 +165,7 @@
 
         <!-- Footer -->
         <footer>
-            <p>&copy; 2023 John Doe. All rights reserved.</p>
+            <p>&copy; 2023 Osman Orka. All rights reserved.</p>
         </footer>
     </div>
 </body>

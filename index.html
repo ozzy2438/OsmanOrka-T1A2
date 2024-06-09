@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="description" content="Professional portfolio of John Doe, a developer and IT professional.">
+  <meta name="description" content="Professional portfolio of Osman Orka, a developer and IT professional.">
     <title>Portfolio - Home</title>
 
     <!-- CSS Files -->
@@ -26,7 +26,6 @@
     <!-- HTML5 Tooltips -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5tooltipsjs/1.7.3/html5tooltips.min.js"></script>
 
-    <!-- JavaScript -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const greeting = document.getElementById('greeting');
@@ -95,15 +94,15 @@
             background-size: cover; /* Ensure full screen size */
             color: #333;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
+            justify-content: space-between;
             align-items: center;
             min-height: 100vh; /* Yükseklik sınırlamasını min-height olarak değiştir */
-            overflow-y: auto; /* Dikey kaydırmayı etkinleştir */
-            background-color: rgba(0, 0, 0, 0.7); /* Darker background color */
         }
         header {
             background-color: #333;
             color: #fff;
+            width: 100%;
             padding: 1rem 0;
             text-align: center; /* Center the navigation menu */
         }
@@ -125,6 +124,9 @@
         main {
             display: flex;
             flex: 1;
+            flex-direction: column;
+            width: 100%;
+            padding: 1rem;
             overflow: auto; /* Added to allow scrolling within the main content */
             margin-top: 1rem; /* Space between header and main content */
         }
@@ -149,6 +151,7 @@
         footer {
             background-color: #333;
             color: #fff;
+            width: 100%;
             text-align: center;
             padding: 1rem 0;
             font-size: 0.9rem; /* Slightly smaller font size for the footer */
@@ -229,10 +232,6 @@
             nav ul li a {
                 font-size: 1rem; /* Smaller font size for navigation links on very small screens */
             }
-            .social-icons a {
-                margin: 0 0.3rem; /* Reduce spacing around social icons for smaller screens */
-                font-size: 1.2rem; /* Smaller icons in footer */
-            }
             .dynamic-text {
                 font-size: 1.5rem; /* Reduce font size to fit smaller screens */
             }
@@ -277,7 +276,7 @@
                     <h1 id="greeting" style="color: #00c6ff; font-style: italic;">Good Evening!</h1>
                     <img src="assets/image2.jpg" class="animated-image animate__animated animate__bounceIn" alt="Animated Image">
                 </div>
-                <p style="color: #0072ff; font-weight: bold;">Welcome to my professional portfolio.My name is Osman Orka. I am a developer and IT professional with experience in web development and software engineering.</p>
+                <p style="color: #0072ff; font-weight: bold;">Welcome to my professional portfolio. My name is Osman Orka. I am a developer and IT professional with experience in web development and software engineering.</p>
             </section>
         </div>
 

@@ -12,7 +12,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/just-animate/2.6.2/just-animate.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fitty/2.4.2/fitty.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/golden-layout/2.6.0/cjs/ts/golden-layout.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/flexMenu/1.6.2/flexmenu.min.js"></script> <!-- Added flexMenu script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flexMenu/1.6.2/flexmenu.min.js"></script>
     <style>
         html, body {
             height: 100%; /* Tam yükseklik */
@@ -25,18 +25,25 @@
             background-size: cover;
             font-family: 'Roboto', sans-serif;
             color: #333;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            min-height: 100vh;
         }
         header {
             background: rgba(0, 0, 0, 0.8);
             padding: 10px;
+            width: 100%;
             text-align: center;
         }
         header nav ul {
             list-style: none;
             padding: 0;
+            display: flex;
+            justify-content: center;
         }
         header nav ul li {
-            display: inline;
             margin: 0 10px;
         }
         header nav ul li a {
@@ -48,7 +55,9 @@
             flex-direction: column; /* Changed to column for vertical layout */
             justify-content: flex-start; /* Adjusted for vertical layout */
             padding: 20px;
+            width: 100%;
             margin-top: 20px;
+            align-items: center;
         }
         section {
             flex: 1;
@@ -90,6 +99,7 @@
         footer {
             text-align: center;
             padding: 10px;
+            width: 100%;
             color: #fff;
             background: rgba(0, 0, 0, 0.8);
         }
