@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <meta name="description" content="Professional portfolio of Osman Orka, a developer and IT professional.">
+    <meta name="description" content="Professional portfolio of Osman Orka, a developer and IT professional.">
     <title>Portfolio - Home</title>
 
     <!-- CSS Files -->
@@ -85,6 +85,7 @@
             margin: 0;
             padding: 0;
             overflow-y: auto; /* Dikey kaydırmayı etkinleştir */
+            overflow-x: hidden; /* Yatay kaydırmayı kapat */
         }
         body {     
             font-family: 'Source Sans Pro', Arial, sans-serif; /* Updated font */
@@ -95,9 +96,10 @@
             color: #333;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            justify-content: flex-start;
             align-items: center;
             min-height: 100vh; /* Yükseklik sınırlamasını min-height olarak değiştir */
+            overflow: auto;
         }
         header {
             background-color: #333;
@@ -270,46 +272,39 @@
 
     <!-- Main Content -->
     <main>
-        <div class="left-column">
-            <section id="home-intro" class="animate__animated animate__fadeInDown">
-                <div class="curved-column">
-                    <h1 id="greeting" style="color: #00c6ff; font-style: italic;">Good Evening!</h1>
-                    <img src="assets/image2.jpg" class="animated-image animate__animated animate__bounceIn" alt="Animated Image">
-                </div>
-                <p style="color: #0072ff; font-weight: bold;">Welcome to my professional portfolio. My name is Osman Orka. I am a developer and IT professional with experience in web development and software engineering.</p>
-            </section>
-        </div>
+        <section id="home-intro" class="animate__animated animate__fadeInDown">
+            <div class="curved-column">
+                <h1 id="greeting" style="color: #00c6ff; font-style: italic;">Good Evening!</h1>
+                <img src="assets/image2.jpg" class="animated-image animate__animated animate__bounceIn" alt="Animated Image">
+            </div>
+            <p style="color: #0072ff; font-weight: bold;">Welcome to my professional portfolio. My name is Osman Orka. I am a developer and IT professional with experience in web development and software engineering.</p>
+        </section>
 
-        <div class="right-column">
-            <section id="contact-info" class="contact-card">
-                <div class="curved-column">
-                    <h2>Contact Information</h2>
-                    <p><i class="fas fa-envelope"></i> Email: <a href="mailto:john.doe@example.com">john.doe@example.com</a></p>
-                    <p><i class="fas fa-phone"></i> Phone: <a href="tel:+1234567890">(123) 456-7890</a></p>
-                    <p><i class="fas fa-map-marker-alt"></i> Location: City, Country</p>
-                </div>
-            </section>
+        <section id="contact-info" class="contact-card">
+            <div class="curved-column">
+                <h2>Contact Information</h2>
+                <p><i class="fas fa-envelope"></i> Email: <a href="mailto:john.doe@example.com">john.doe@example.com</a></p>
+                <p><i class="fas fa-phone"></i> Phone: <a href="tel:+1234567890">(123) 456-7890</a></p>
+                <p><i class="fas fa-map-marker-alt"></i> Location: City, Country</p>
+            </div>
+        </section>
 
-            <section id="professional-links" class="contact-card">
-                <div class="colorful-column">
-                    <h2>Professional Links</h2>
-                    <ul>
-                        <li><a href="https://github.com/johndoe" target="_blank"><i class="fab fa-github"></i> GitHub</a></li>
-                        <li><a href="https://www.linkedin.com/in/johndoe" target="_blank" class="animate__animated animate__bounceIn"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
-                        <li><a href="https://twitter.com/johndoe" target="_blank" class="animate__animated animate__bounceIn"><i class="fab fa-twitter"></i> Twitter</a></li>
-                        <li><a href="https://discord.com/users/johndoe" target="_blank" class="animate__animated animate__bounceIn"><i class="fab fa-discord"></i> Discord</a></li>
-                    </ul>
-                </div>
-            </section>
-        </div>
+        <section id="professional-links" class="contact-card">
+            <div class="colorful-column">
+                <h2>Professional Links</h2>
+                <ul>
+                    <li><a href="https://github.com/johndoe" target="_blank"><i class="fab fa-github"></i> GitHub</a></li>
+                    <li><a href="https://www.linkedin.com/in/johndoe" target="_blank" class="animate__animated animate__bounceIn"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+                    <li><a href="https://twitter.com/johndoe" target="_blank" class="animate__animated animate__bounceIn"><i class="fab fa-twitter"></i> Twitter</a></li>
+                    <li><a href="https://discord.com/users/johndoe" target="_blank" class="animate__animated animate__bounceIn"><i class="fab fa-discord"></i> Discord</a></li>
+                </ul>
+            </div>
+        </section>
     </main>
 
     <!-- Footer -->
     <footer>
         <p>&copy; 2024 Osman Orka. All rights reserved.</p>
-        <div class="social-icons">
-            <!-- Social icons removed as per instruction -->
-        </div>
     </footer>
 </body>
 </html>
