@@ -31,11 +31,10 @@
             justify-content: flex-start;
             align-items: center;
             min-height: 100vh;
-            overflow: auto;
         }
         header {
-            background-color: transparent; /* Transparent background */
-            backdrop-filter: none; /* Remove blur effect */
+            background-color: transparent;
+            backdrop-filter: none;
             color: #fff;
             width: 100%;
             padding: 1rem 0;
@@ -49,11 +48,11 @@
             padding: 0;
             margin: 0;
             display: flex;
-            justify-content: center; /* Center items horizontally */
+            justify-content: center;
             align-items: center;
         }
         nav ul li {
-            margin: 0 10px; /* Space between menu items */
+            margin: 0 10px;
         }
         nav ul li a {
             color: #fff;
@@ -62,12 +61,12 @@
             padding: 10px 15px;
             border-radius: 15px;
             transition: background-color 0.3s, color 0.3s;
-            background: linear-gradient(135deg, #ff6b6b, #ffa500); /* Colorful background */
+            background: linear-gradient(135deg, #ff6b6b, #ffa500);
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
         nav ul li a:hover {
-            background: linear-gradient(135deg, #ffa500, #ff6b6b); /* Reverse gradient on hover */
-            color: #fff; /* White text on hover */
+            background: linear-gradient(135deg, #ffa500, #ff6b6b);
+            color: #fff;
         }
         main {
             display: flex;
@@ -77,8 +76,8 @@
             padding: 20px;
             margin-top: 60px;
             width: 100%;
-            overflow: auto;
             flex: 1;
+            overflow-y: auto;
         }
         section {
             width: 100%;
@@ -124,6 +123,52 @@
             position: fixed;
             bottom: 0;
             z-index: 1000;
+        }
+        @media (max-width: 768px) {
+            header {
+                padding: 8px 0;
+            }
+            nav ul {
+                flex-direction: column;
+            }
+            nav ul li {
+                margin: 5px 0;
+            }
+            nav ul li a {
+                padding: 8px 10px;
+                font-size: 14px;
+            }
+            main {
+                padding: 10px;
+                margin-top: 50px;
+            }
+            section {
+                margin: 10px 0;
+                padding: 15px;
+            }
+            .btn {
+                padding: 8px 16px;
+            }
+        }
+        @media (max-width: 480px) {
+            header {
+                padding: 5px 0;
+            }
+            nav ul li a {
+                padding: 7px 8px;
+                font-size: 12px;
+            }
+            main {
+                padding: 5px;
+                margin-top: 40px;
+            }
+            section {
+                margin: 5px 0;
+                padding: 10px;
+            }
+            .btn {
+                padding: 6px 12px;
+            }
         }
     </style>
     <script>
