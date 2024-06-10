@@ -18,8 +18,8 @@
             height: 100%;
             margin: 0;
             padding: 0;
-            overflow-y: auto; /* Enable vertical scrolling */
-            overflow-x: hidden; /* Disable horizontal scrolling */
+            overflow-y: auto;
+            overflow-x: hidden;
         }
         body {
             background: url('assets/image4.jpg') no-repeat center center fixed;
@@ -34,29 +34,40 @@
             overflow: auto;
         }
         header {
-            background: rgba(0, 0, 0, 0.8);
-            padding: 10px;
-            text-align: center;
+            background-color: transparent; /* Transparent background */
+            backdrop-filter: none; /* Remove blur effect */
+            color: #fff;
             width: 100%;
+            padding: 1rem 0;
+            text-align: center;
             position: fixed;
             top: 0;
             z-index: 1000;
         }
-        header nav ul {
+        nav ul {
             list-style: none;
             padding: 0;
-            display: flex;
-            justify-content: center;
             margin: 0;
+            display: flex;
+            justify-content: center; /* Center items horizontally */
+            align-items: center;
         }
-        header nav ul li {
-            display: inline;
-            margin: 0 10px;
+        nav ul li {
+            margin: 0 10px; /* Space between menu items */
         }
-        header nav ul li a {
+        nav ul li a {
             color: #fff;
             text-decoration: none;
-            font-size: 1rem; /* Daha küçük font boyutu */
+            font-size: 1rem;
+            padding: 10px 15px;
+            border-radius: 15px;
+            transition: background-color 0.3s, color 0.3s;
+            background: linear-gradient(135deg, #ff6b6b, #ffa500); /* Colorful background */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        nav ul li a:hover {
+            background: linear-gradient(135deg, #ffa500, #ff6b6b); /* Reverse gradient on hover */
+            color: #fff; /* White text on hover */
         }
         main {
             display: flex;
@@ -64,7 +75,7 @@
             justify-content: flex-start;
             align-items: center;
             padding: 20px;
-            margin-top: 60px; /* Space for the fixed header */
+            margin-top: 60px;
             width: 100%;
             overflow: auto;
             flex: 1;

@@ -94,3 +94,25 @@ footer {
 .animate__flipInX {
     --animate-duration: 1s; /* Change the duration as needed */
 }
+
+/* Mobile and Tablet Adjustments */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+
+    nav ul li a {
+        font-size: 14px; /* Adjust font size for better visibility on small devices */
+    }
+}
+
+/* Smaller Mobile Screens */
+@media (max-width: 480px) {
+    nav ul li a {
+        font-size: 12px;
+    }
+}

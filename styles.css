@@ -1,14 +1,4 @@
-/* CSS Variables for Theme Colors */
-:root {
-    --primary-color: #2c3e50;
-    --secondary-color: #e67e22;
-    --background-color: #f9f9f9;
-    --text-color: #333;
-    --light-gray: #ecf0f1;
-    --white: #fff;
-}
-
-/* General Styles */
+/* Base styles for mobile devices */
 body {
     font-family: 'Source Sans Pro', Arial, sans-serif;
     margin: 0;
@@ -16,207 +6,125 @@ body {
     background: linear-gradient(to bottom right, #ff6b6b, #ffa500);
     color: #333;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 100vh; /* Yükseklik sınırını min-height olarak değiştir */
-    overflow: auto; /* Dikey kaydırmayı etkinleştir */
-}
-
-header {
-    background-color: #333;
-    color: #fff;
-    padding: 1rem 0;
-    width: 100%;
+    height: 100vh;
 }
 
 header nav ul {
-    list-style: none;
-    padding: 0;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    background-color: var(--primary-color);
 }
 
 header nav ul li {
-    margin: 0 1rem;
+    text-align: center;
+    border-bottom: 1px solid #444;
 }
 
 header nav ul li a {
-    color: #fff;
+    display: block;
+    padding: 10px;
+    color: var(--white);
     text-decoration: none;
-    font-size: 1.2rem;
+}
+
+header nav ul li a:hover {
+    background-color: #555;
 }
 
 main {
-    padding: 2rem;
-    width: 100%;
+    padding: 20px;
 }
 
 section {
-    margin-bottom: 2rem;
-    background-color: #fff;
-    padding: 1rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
-    transform: perspective(800px) rotateX(10deg);
-    transition: transform 0.3s ease-in-out;
-}
-
-section:hover {
-    transform: perspective(800px) rotateX(0deg);
-}
-
-footer {
-    background-color: #333;
-    color: #fff;
-    width: 100%;
-    text-align: center;
-    padding: 1rem 0;
-}
-
-#home-intro {
-    text-align: center;
-    margin: 40px 0;
-}
-
-#home-intro h1 {
-    font-size: 3rem;
     margin-bottom: 20px;
 }
 
-#contact-info, #professional-links {
-    margin: 40px 0;
+footer {
     text-align: center;
+    padding: 10px;
+    background-color: var(--primary-color);
+    color: var(--white);
 }
 
-#contact-info p, #professional-links ul {
-    margin: 0;
-}
-
-#professional-links ul {
-    display: flex;
-    list-style: none;
-    padding: 0;
-    justify-content: center;
-}
-
-#professional-links ul li {
-    margin-right: 20px;
-}
-
-#professional-links ul li a {
-    text-decoration: none;
-    color: var(--text-color);
-}
-
-#professional-links ul li a:hover {
-    text-decoration: underline;
-}
-
-/* Blog Page Styles */
-#blog ul {
-    list-style: none;
-    padding: 0;
-}
-
-#blog ul li {
-    background: #fff;
-    margin: 1rem 0;
-    padding: 1rem;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-#blog ul li:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-#blog ul li a {
-    text-decoration: none;
-    color: #333;
-    font-size: 1.2rem;
-    font-weight: bold;
-}
-
-#blog ul li .post-date {
-    display:block;
-    margin-top: 0.5rem;
-    color: #777;
-}
-
-#search {
-    width: 100%;
-    padding: 1rem;
-    margin-bottom: 2rem;
-    border: none;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.3s ease;
-}
-
-#search:focus {
-    outline: none;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-}
-
-/* Base style adjustments */
-img, .container {
-    max-width: 100%;
-    height: auto;
-}
-
-.container {
-    padding: 0 15px;
-    margin: auto;
-}
-
-html {
-    font-size: 16px;
-}
-
-@media only screen and (max-width: 768px) {
-    html {
-        font-size: 14px;
-    }
-}
-
-@media only screen and (max-width: 600px) {
-    html {
-        font-size: 12px;
-    }
-}
-
-@media only screen and (max-width: 600px) {
-    body {
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: stretch;
-        height: auto;
-        padding: 20px;
-        background: var(--background-color); /* Daha sade bir arka plan */
-    }
-
-    header, footer {
-        padding: 10px 0;
-    }
-
+/* Tablet styles */
+@media (min-width: 600px) and (max-width: 1023px) {
     header nav ul {
-        flex-direction: column;
+        flex-direction: row;
+        justify-content: space-around;
     }
 
     header nav ul li {
-        text-align: center;
-        margin: 5px 0;
+        border-right: 1px solid #444;
+    }
+
+    header nav ul li:last-child {
+        border-right: none;
     }
 
     main {
-        padding: 10px;
+        padding: 40px;
     }
 
     section {
-        margin-bottom: 10px;
-        padding: 10px;
+        margin-bottom: 40px;
+    }
+}
+
+/* Desktop styles */
+@media (min-width: 1024px) {
+    main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 60px;
+    }
+
+    section {
+        width: 80%;
+        margin-bottom: 60px;
+    }
+}
+
+/* Add flipInX animation */
+.animate__flipInX {
+    --animate-duration: 1s; /* Change the duration as needed */
+}
+
+/* Mobile and Tablet Adjustments */
+@media (max-width: 768px) {
+    header {
+        padding: 8px 0; /* Less padding on mobile */
+    }
+
+    nav ul {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    nav ul li {
+        margin: 5px;
+    }
+
+    nav ul li a {
+        padding: 8px 10px;
+        font-size: 14px; /* Smaller font size for mobile */
+    }
+}
+
+/* Smaller Mobile Screens */
+@media (max-width: 480px) {
+    header {
+        padding: 5px 0;
+    }
+
+    nav ul li a {
+        padding: 7px 8px;
+        font-size: 12px; /* Even smaller font size for smaller devices */
     }
 }

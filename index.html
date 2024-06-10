@@ -15,6 +15,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/froala-design-blocks/2.0.1/css/froala_blocks.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Colors.css for more color options -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/colors.css/3.0.0/colors.min.css">
 
     <!-- GSAP for animations -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
@@ -101,71 +103,95 @@
             min-height: 100vh;
         }
         header {
-            background-color: #333;
+            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
             color: #fff;
             width: 100%;
             padding: 1rem 0;
             text-align: center;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
         }
         nav ul {
             list-style: none;
             padding: 0;
+            margin: 0;
             display: flex;
             justify-content: center;
-            margin: 0;
+            align-items: center;
         }
         nav ul li {
-            margin: 0 0.5rem; /* Küçük boşluk */
+            margin: 0 20px; /* Space between menu items */
         }
         nav ul li a {
-            color: #fff;
+            color: #FFD700; /* Golden color */
             text-decoration: none;
-            font-size: 1rem; /* Daha küçük font boyutu */
+            font-size: 1rem;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        nav ul li a:hover {
+            background-color: #FF4500; /* OrangeRed background on hover */
+            color: #fff; /* White text on hover */
         }
         main {
             display: flex;
-            flex: 1;
             flex-direction: column;
+            align-items: center;
             width: 100%;
-            padding: 1rem;
-            overflow: auto;
-            margin-top: 1rem;
+            margin-top: 100px; /* Give more space for the fixed header */
+            padding: 20px;
         }
-        .left-column {
+        .home-introduction {
+            text-align: center;
+            max-width: 960px;
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 40px; /* Increase margin to move it further down */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .home-introduction h1 {
+            font-size: 2.5rem;
+            color: #FFD700; /* Golden color for a bit of flair */
+        }
+        .home-introduction p {
+            font-size: 1.2rem;
+            margin-top: 20px;
+            color: #ff6b6b; /* Colorful text */
+        }
+        .left-column, .right-column {
             flex: 1;
             display: flex;
             justify-content: center;
             align-items: center;
-            padding-right: 1rem;
-        }
-        .right-column {
-            flex: 1;
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: flex-start;
-            padding-left: 1rem;
+            padding: 1rem;
         }
         section {
             margin-bottom: 2rem;
         }
         footer {
-            background-color: #333;
+            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
             color: #fff;
             width: 100%;
             text-align: center;
             padding: 1rem 0;
             font-size: 0.9rem;
+            position: fixed;
+            bottom: 0;
+            z-index: 1000;
         }
         .social-icons {
             display: none;
         }
         .contact-card {
-            background: rgba(255, 255, 255, 0.95);
-            padding: 1rem;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            margin-top: 2rem;
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
             width: 100%;
             display: flex;
             flex-direction: column;
@@ -174,12 +200,20 @@
         }
         .contact-card h2 {
             font-weight: bold;
-            margin-bottom: 1rem;
-            color: #0056b3;
+            margin-top: 0;
+            color: #FFD700; /* Golden color */
         }
         .contact-card p {
             margin-bottom: 1rem;
-            color: #555;
+            color: #FFD700; /* Golden color */
+        }
+        .contact-card a {
+            color: #00c6ff;
+            text-decoration: underline;
+        }
+        .contact-card a:hover {
+            text-decoration: none;
+            color: #00aaff;
         }
         .curved-column {
             background: linear-gradient(to right, #ff6b6b, #ffa500);
@@ -219,8 +253,11 @@
                 flex: none;
                 width: 100%;
             }
+            nav ul {
+                flex-direction: column;
+            }
             nav ul li {
-                margin: 0 0.5rem;
+                margin: 0.5rem 0;
             }
             .contact-card, .curved-column, .colorful-column {
                 width: auto;
@@ -244,7 +281,7 @@
             }
         }
 
-        /* Additional Styling for Better Layout and Color Contrast */
+        /* Additional Styling for Better Layout */
         .contact-card a, .colorful-column a, .curved-column a {
             color: #ffffff;
             text-decoration: underline;
@@ -255,7 +292,6 @@
         }
     </style>
 </head>
-
 <body>
     <!-- Header -->
     <header>
@@ -264,47 +300,38 @@
                 <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
                 <li><a href="about.html"><i class="fas fa-user"></i> About</a></li>
                 <li><a href="resume.pdf"><i class="fas fa-file-alt"></i> Resume</a></li>
-                <li><a href="projects.html"><i class="fas fa-projects"></i> Projects</a></li>
+                <li><a href="projects.html"><i class="fas fa-project-diagram"></i> Projects</a></li>
             </ul>
         </nav>
     </header>
-
     <!-- Main Content -->
     <main>
-        <div class="left-column">
-            <section id="home-intro" class="animate__animated animate__fadeInDown">
-                <div class="curved-column">
-                    <h1 id="greeting" style="color: #00c6ff; font-style: italic;">Good Evening!</h1>
-                    <img src="assets/image2.jpg" class="animated-image animate__animated animate__bounceIn" alt="Animated Image">
-                </div>
-                <p style="color: #0072ff; font-weight: bold;">Welcome to my professional portfolio. My name is Osman Orka. I am a developer and IT professional with experience in web development and software engineering.</p>
-            </section>
+        <div class="home-introduction">
+            <h1 id="greeting" style="color: #FFD700; font-style: italic;">Good Afternoon!</h1>
+            <p>Welcome to my professional portfolio. My name is Osman Orka. I am a developer and IT professional with experience in web development and software engineering.</p>
         </div>
-
         <div class="right-column">
-            <section id="contact-info" class="contact-card">
-                <div class="curved-column">
-                    <h2>Contact Information</h2>
-                    <p><i class="fas fa-envelope"></i> Email: <a href="mailto:john.doe@example.com">john.doe@example.com</a></p>
-                    <p><i class="fas fa-phone"></i> Phone: <a href="tel:+1234567890">(123) 456-7890</a></p>
-                    <p><i class="fas fa-map-marker-alt"></i> Location: City, Country</p>
-                </div>
+            <!-- Contact Information Section -->
+            <section id="contact-info" class="contact-card stylish-card">
+                <h2>Contact Information</h2>
+                <p><i class="fas fa-envelope"></i> Email: <a href="mailto:john.doe@example.com">john.doe@example.com</a></p>
+                <p><i class="fas fa-phone"></i> Phone: <a href="tel:+1234567890">(123) 456-7890</a></p>
+                <p><i class="fas fa-map-marker-alt"></i> Location: City, Country</p>
             </section>
 
-            <section id="professional-links" class="contact-card">
-                <div class="colorful-column">
-                    <h2>Professional Links</h2>
-                    <ul>
-                        <li><a href="https://github.com/johndoe" target="_blank"><i class="fab fa-github"></i> GitHub</a></li>
-                        <li><a href="https://www.linkedin.com/in/johndoe" target="_blank" class="animate__animated animate__bounceIn"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
-                        <li><a href="https://twitter.com/johndoe" target="_blank" class="animate__animated animate__bounceIn"><i class="fab fa-twitter"></i> Twitter</a></li>
-                        <li><a href="https://discord.com/users/johndoe" target="_blank" class="animate__animated animate__bounceIn"><i class="fab fa-discord"></i> Discord</a></li>
-                    </ul>
-                </div>
+            <!-- Professional Links Section -->
+            <section id="professional-links" class="contact-card stylish-card">
+                <h2>Professional Links</h2>
+                <ul>
+                    <li><a href="https://github.com/johndoe" target="_blank"><i class="fab fa-github"></i> GitHub</a></li>
+                    <li><a href="https://www.linkedin.com/in/johndoe" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+                    <li><a href="https://twitter.com/johndoe" target="_blank"><i class="fab fa-twitter"></i> Twitter</a></li>
+                    <li><a href="https://discord.com/users/johndoe" target="_blank"><i class="fab fa-discord"></i> Discord</a></li>
+                </ul>
             </section>
         </div>
     </main>
-
+    
     <!-- Footer -->
     <footer>
         <p>&copy; 2024 Osman Orka. All rights reserved.</p>

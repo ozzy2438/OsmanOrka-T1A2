@@ -15,22 +15,22 @@
             height: 100%;
             margin: 0;
             padding: 0;
-            overflow-y: auto; /* Dikey kaydırmayı etkinleştir */
-            overflow-x: hidden; /* Yatay kaydırmayı kapat */
+            overflow-y: auto;
+            overflow-x: hidden;
         }
         body {
             font-family: 'Source Sans Pro', Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background: url('assets/image3.jpg') no-repeat center center fixed; /* Background image inserted */
-            background-size: cover; /* Ensure full screen size */
-            filter: brightness(70%); /* Darken the background more */
+            background: url('assets/image3.jpg') no-repeat center center fixed;
+            background-size: cover;
+            filter: brightness(70%);
             color: #333;
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
             align-items: center;
-            min-height: 100vh; /* Height constraint changed to min-height */
+            min-height: 100vh;
             overflow: auto;
         }
         .screen {
@@ -47,22 +47,20 @@
             to { opacity: 1; }
         }
         header {
-            background-color: #333;
+            background-color: transparent; /* Transparent background */
+            backdrop-filter: none; /* Remove blur effect */
             color: #fff;
             width: 100%;
             padding: 1rem 0;
+            text-align: center;
             position: fixed;
             top: 0;
             z-index: 1000;
-            animation: slideDown 1s ease-out;
-        }
-        @keyframes slideDown {
-            from { transform: translateY(-100%); }
-            to { transform: translateY(0); }
         }
         nav ul {
             list-style: none;
             padding: 0;
+            margin: 0;
             display: flex;
             justify-content: center;
         }
@@ -72,11 +70,20 @@
         nav ul li a {
             color: #fff;
             text-decoration: none;
-            font-size: 1rem; /* Daha küçük font boyutu */
+            font-size: 1rem;
+            padding: 10px 15px;
+            border-radius: 15px;
+            transition: background-color 0.3s, color 0.3s;
+            background: linear-gradient(135deg, #ff6b6b, #ffa500); /* Colorful background */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        nav ul li a:hover {
+            background: linear-gradient(135deg, #ffa500, #ff6b6b); /* Reverse gradient on hover */
+            color: #fff; /* White text on hover */
         }
         main {
             padding: 2rem;
-            margin-top: 5rem; /* Space for the fixed header */
+            margin-top: 5rem;
             width: 100%;
             overflow: auto;
             flex: 1;
@@ -95,7 +102,7 @@
             transform: perspective(800px) rotateX(0deg);
         }
         footer {
-            background-color: #333;
+            background-color: transparent; /* Transparent background */
             color: #fff;
             width: 100%;
             text-align: center;
@@ -103,26 +110,21 @@
             position: fixed;
             bottom: 0;
             z-index: 1000;
-            animation: slideUp 1s ease-out;
-        }
-        @keyframes slideUp {
-            from { transform: translateY(100%); }
-            to { transform: translateY(0); }
         }
         #about-me {
-            background-color: #f0e68c; /* Light khaki background */
+            background-color: #f0e68c;
             animation: animaSlideRight 1.5s ease-out;
         }
         #skills {
-            background-color: #add8e6; /* Light blue background */
+            background-color: #add8e6;
             animation: animaSlideLeft 1.5s ease-out;
         }
         #interests {
-            background-color: #98fb98; /* Pale green background */
+            background-color: #98fb98;
             animation: animaSlideRight 1.5s ease-out;
         }
         #professional-knowledge {
-            background-color: #ffb6c1; /* Light pink background */
+            background-color: #ffb6c1;
             animation: animaSlideLeft 1.5s ease-out;
         }
         @keyframes animaSlideRight {
@@ -141,10 +143,10 @@
         <header>
             <nav>
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="resume.html">Resume</a></li>
-                    <li><a href="projects.html">Blog</a></li>
+                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="about.html"><i class="fas fa-user"></i> About</a></li>
+                    <li><a href="resume.html"><i class="fas fa-file-alt"></i> Resume</a></li>
+                    <li><a href="projects.html"><i class="fas fa-project-diagram"></i> Projects</a></li>
                 </ul>
             </nav>
         </header>
@@ -172,6 +174,11 @@
                 <p>With years of experience in the tech industry, I have honed my skills in various domains, including software development, IT infrastructure, and cloud computing. My professional journey has equipped me with the knowledge and expertise to tackle diverse challenges and deliver exceptional results.</p>
             </section>
         </main>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2024 Osman Orka. All rights reserved.</p>
+        </footer>
     </div>
 </body>
 </html>
